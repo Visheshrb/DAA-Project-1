@@ -25,7 +25,7 @@ def sample_function(n):
             Sum += a[j] * b[k]   # safe: arrays are large enough
             k = int(k ** 1.5)
         j = int(1.2 * j)
-    return Sum  # not used in timing
+    return Sum  
 
 # --- Theoretical values ---
 theoretical = [(np.log(np.log(float(n))))**2 for n in n_values]
@@ -71,3 +71,4 @@ plt.legend()
 plt.grid(True, which="both", linestyle="--", linewidth=0.6)
 plt.tight_layout()
 plt.show()
+
