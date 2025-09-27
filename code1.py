@@ -4,21 +4,28 @@ import pandas as pd
 import time
 import math
 
+# --- n values ---
+n_values = [100, 200, 300, 400, 500, 1000, 2000, 3000, 4000, 5000,
+            10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000,
+            1000000]
+
+# --- Pre-build arrays big enough for largest n ---
+max_n = max(n_values)
+a = np.arange(max_n + 20) + 1
+b = np.arange(max_n + 20) + 2
+
 # --- Function to simulate complexity ---
 def sample_function(n):
-    n = float(n)
+    n = int(n)
     j = 5
-    Sum=0
+    Sum = 0
     while j < np.log(n):  # Outer loop
         k = 5
         while k < n:      # Inner loop
-            Sum+=j*k
+            Sum += a[j] * b[k]   # safe: arrays are large enough
             k = int(k ** 1.5)
         j = int(1.2 * j)
-
-# --- n values ---
-n_values = [100, 200, 300, 400, 500, 1000, 2000, 3000, 4000, 5000,
-            10000, 20000, 30000, 40000, 50000, 100000, 200000, 300000, 400000, 500000]
+    return Sum  # not used in timing
 
 # --- Theoretical values ---
 theoretical = [(np.log(np.log(float(n))))**2 for n in n_values]
