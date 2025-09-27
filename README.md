@@ -14,10 +14,10 @@ The program:
 - Outputs a detailed table showing values used and computed metrics.
 
 ## How to Run
-git clone https://github.com/Visheshrb/DAA-Project-1.git
-cd DAA-Project-1
-pip install numpy matplotlib pandas
-python3 main.py
+- git clone https://github.com/Visheshrb/DAA-Project-1.git
+- cd DAA-Project-1
+- pip install numpy matplotlib pandas
+- python3 main.py
 
 
 
